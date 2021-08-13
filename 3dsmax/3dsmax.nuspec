@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>3dsmax</id>
+    <version>2022.2400923</version>
+    <packageSourceUrl>https://github.com/Ahuge/chocolatey_packages/tree/main/3dsmax</packageSourceUrl>
+    <owners>ahuge</owners>
+    <title>3ds Max</title>
+    <authors>Autodesk</authors>
+    <projectUrl>https://www.autodesk.ca/en/products/3ds-max</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Ahuge/chocolatey_packages@main/3dsmax/icon.png</iconUrl>
+    <licenseUrl>https://download.autodesk.com/global/dlm_eula/English.html</licenseUrl>
+    <docsUrl>https://help.autodesk.com/view/3DSMAX/2022/ENU/</docsUrl>
+    <tags>autodesk 3dsmax vfx</tags>
+    <summary>3ds Max</summary>
+    <description>3ds Max offers a rich and flexible toolset to create premium designs with full artistic control.
+
+Create massive worlds in games
+Visualize high-quality architectural renderings
+Model finely detailed interiors and objects
+Bring characters and features to life with animation and VFX</description>
+
+    <dependencies>
+      <dependency id="dotnetfx" version="4.8.0.0" />
+      <dependency id="dotnetcore-runtime" version="3.1.10" />
+      <dependency id="dotnetcore-aspnetruntime" version="3.1.10" />
+    </dependencies>
+    <releaseNotes>https://help.autodesk.com/view/3DSMAX/2022/ENU/?guid=3dsMax_ReleaseNotes_3dsmax_2022_releasenotes_html</releaseNotes>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
