@@ -4,7 +4,7 @@
   <metadata>
     <id>3dsmax</id>
     <version>2022.2400923</version>
-    <packageSourceUrl>https://github.com/Ahuge/chocolatey_packages/tree/main/3dsmax</packageSourceUrl>
+    <packageSourceUrl>https://github.com/Ahuge/chocolatey-packages/tree/main/3dsmax</packageSourceUrl>
     <owners>ahuge</owners>
     <title>3ds Max</title>
     <authors>Autodesk</authors>
