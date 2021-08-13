@@ -9,7 +9,7 @@
     <title>3ds Max</title>
     <authors>Autodesk</authors>
     <projectUrl>https://www.autodesk.ca/en/products/3ds-max</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/Ahuge/chocolatey_packages@main/3dsmax/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Ahuge/chocolatey-packages@main/3dsmax/icon.png</iconUrl>
     <licenseUrl>https://download.autodesk.com/global/dlm_eula/English.html</licenseUrl>
     <docsUrl>https://help.autodesk.com/view/3DSMAX/2022/ENU/</docsUrl>
     <tags>autodesk 3dsmax vfx</tags>
