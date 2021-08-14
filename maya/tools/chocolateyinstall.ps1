@@ -1,6 +1,4 @@
-$mayaPackageId	  = "9CF605B0-2F2D-378F-9603-68A2199ECE65}"
-$3dsmaxPackageId = "{B2EF7E27-4824-3656-A115-BFF401F11F7C}"
-Autodesk_Maya_2022_ML_Windows_64bit_dlm_001_002.sfx.exe
+$mayaPackageId	  = "{9D725D29-4BE6-3ED9-A585-F4D5E20CECEE}"
 
 $url1             = 'https://efulfillment.autodesk.com/NetSWDLD/2022/MAYA/9D725D29-4BE6-3ED9-A585-F4D5E20CECEE/SFX/Autodesk_Maya_2022_ML_Windows_64bit_dlm_001_002.sfx.exe'
 $checksum1        = '2B435717311325C58CE4AD59716D66BEEA91EBC3DDB728CBB34B6ACF586A22C8'
@@ -8,7 +6,6 @@ $url2             = 'https://efulfillment.autodesk.com/NetSWDLD/2022/MAYA/9D725D
 $checksum2        = 'C0960DB926CB1B41C129110D2A1CC0D470F95190E4603B00D01F5652A02591E7'
 
 $unzip            = Join-Path $env:TEMP 'Autodesk_Maya_2022_ML_Windows_64bit_dlm'
-
 
 $downloadPath1  = Join-Path $env:TEMP 'Autodesk_Maya_2022_ML_Windows_64bit_dlm_001_002.sfx.exe'
 $downloadPath2  = Join-Path $env:TEMP 'Autodesk_Maya_2022_ML_Windows_64bit_dlm_002_002.sfx.exe'
