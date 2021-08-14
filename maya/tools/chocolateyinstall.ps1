@@ -112,7 +112,7 @@ $packageArgsMaya = @{
   fileType       = 'msi'
   file           = $maya
   softwareName   = 'Autodesk Maya 2022*'
-  silentArgs     = 'ADSK_ODIS_SETUP="1" INSTALLDIR="C:\Program Files\Autodesk" /qn /norestart /l*v c:\maya_msi_install2.log'
+  silentArgs     = 'ADSK_ODIS_SETUP="1" INSTALLDIR="C:\Program Files\Autodesk" /qn /norestart'
   validExitCodes = @(0, 3010, 1641)
 }
 Install-ChocolateyInstallPackage @packageArgsMaya
