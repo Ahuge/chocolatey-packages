@@ -6,7 +6,7 @@
     <version>2022.10579</version>
     <packageSourceUrl>https://github.com/Ahuge/chocolatey-packages/tree/main/maya</packageSourceUrl>
     <owners>ahuge</owners>
-    <title>3ds Max</title>
+    <title>Maya 2022.1</title>
     <authors>Autodesk</authors>
     <projectUrl>https://www.autodesk.ca/en/products/maya</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/Ahuge/chocolatey-packages@main/maya/icon.png</iconUrl>
