@@ -1,0 +1,19 @@
+Much of this was copied from the AutoCAD package by aa.malta (https://github.com/andreasmalta/choco_packages/blob/master/autocadlt/notes.txt).
+
+checksum -t sha256 -f AutoCAD_LT_2022_English_Win_64bit_dlm.sfx.exe
+#copy version number from unzip folder setup.xml
+
+#INSTALL
+choco pack
+choco install dotnetfx vcredist2012 vcredist140 dotnetcore-runtime dotnetcore-aspnetruntime -y
+choco install maya -y -dv -s .
+
+#UPGRADE
+choco install maya -y
+choco upgrade maya -y -dv -s .
+
+#UNINSTALL
+choco uninstall maya -y
+
+# PUSH
+choco push 3dsmax.2022.2400923.nupkg -s https://push.chocolatey.org/

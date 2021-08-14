@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>maya</id>
+    <version>2022.00217</version>
+    <packageSourceUrl>https://github.com/Ahuge/chocolatey-packages/tree/main/maya</packageSourceUrl>
+    <owners>ahuge</owners>
+    <title>3ds Max</title>
+    <authors>Autodesk</authors>
+    <projectUrl>https://www.autodesk.ca/en/products/maya</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Ahuge/chocolatey-packages@main/maya/icon.png</iconUrl>
+    <licenseUrl>https://download.autodesk.com/global/dlm_eula/English.html</licenseUrl>
+    <docsUrl>https://help.autodesk.com/view/MAYAUL/2022/ENU/</docsUrl>
+    <tags>autodesk maya vfx</tags>
+    <summary>maya</summary>
+    <description>Create expansive worlds, complex characters, and dazzling effects with Maya
+
+
+Bring believable characters to life with engaging animation tools.
+Shape 3D objects and scenes with intuitive modeling tools in Maya® software.
+Create realistic effects—from explosions to cloth simulation.</description>
+    <releaseNotes>https://help.autodesk.com/view/MAYAUL/2022/ENU/?guid=Maya_ReleaseNotes_2022_release_notes_html</releaseNotes>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
