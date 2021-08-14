@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>maya</id>
-    <version>2022.00217</version>
+    <version>2022.10579</version>
     <packageSourceUrl>https://github.com/Ahuge/chocolatey-packages/tree/main/maya</packageSourceUrl>
     <owners>ahuge</owners>
     <title>3ds Max</title>

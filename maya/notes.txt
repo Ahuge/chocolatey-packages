@@ -16,4 +16,4 @@ choco upgrade maya -y -dv -s .
 choco uninstall maya -y
 
 # PUSH
-choco push 3dsmax.2022.2400923.nupkg -s https://push.chocolatey.org/
+choco push maya.2022.10579.nupkg -s https://push.chocolatey.org/
