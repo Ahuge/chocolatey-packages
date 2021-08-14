@@ -3,7 +3,7 @@
 #uninstalling autodesk desktop app requires some prep
 Stop-Process -Name "Autodesk*" -Force
 Stop-Service -Name "AdAppMgrSvc"
-Remove-Item –path C:\ProgramData\Autodesk\SDS –recurse
+Remove-Item –path C:\ProgramData\Autodesk\SDS –recurse -ErrorAction Ignore
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   fileType      = 'exe'
