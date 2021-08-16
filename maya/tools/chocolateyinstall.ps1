@@ -1,4 +1,4 @@
-$mayaPackageId	  = "{9CF605B0-2F2D-378F-9603-68A2199ECE65}"
+$mayaPackageId    = "{9CF605B0-2F2D-378F-9603-68A2199ECE65}"
 
 $url1             = 'https://efulfillment.autodesk.com/NetSWDLD/2022/MAYA/9CF605B0-2F2D-378F-9603-68A2199ECE65/SFX/Autodesk_Maya_2022_1_ML_Windows_64bit_dlm_001_002.sfx.exe'
 $checksum1        = '01C66556BB7B0EE60275284926FEFF0ED4D039761F29C848DF27A68B8AE9AAFD'
@@ -105,7 +105,6 @@ $packageArgsVcRedist2019x86  = @{
 }
 Install-ChocolateyInstallPackage @packageArgsVcRedist2019x86
 
-# INSTALLDIR="%programFiles%\Autodesk\Maya2022
 $maya            = Join-Path $unzip 'x64\Maya\Maya.msi'
 $packageArgsMaya = @{
   packageName    = 'Autodesk Maya'
@@ -146,7 +145,7 @@ $packageArgsBifrost  = @{
   fileType       = 'msi'
   file           = $bifrost
   softwareName   = 'Bifröst 2.2.1.2*'
-  silentArgs     = '/qn /norestart'	
+  silentArgs     = '/qn /norestart'
   validExitCodes = @(0, 3010, 1641)
 }
 Install-ChocolateyInstallPackage @packageArgsBifrost
@@ -158,7 +157,7 @@ $packageArgsMayaUSD  = @{
   fileType       = 'msi'
   file           = $mayaUsd
   softwareName   = 'MayaUSD 0.10.0*'
-  silentArgs     = '/qn /norestart'	
+  silentArgs     = '/qn /norestart'
   validExitCodes = @(0, 3010, 1641)
 }
 Install-ChocolateyInstallPackage @packageArgsMayaUSD
@@ -173,3 +172,9 @@ $packageArgsSubstance  = @{
   validExitCodes = @(0, 1638, 3010)
 }
 Install-ChocolateyInstallPackage @packageArgsSubstance
+
+$RegRebootRequired = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired"
+if (Test-path $RegRebootRequired)
+{
+    Remove-Item -Path $RegRebootRequired
+}
