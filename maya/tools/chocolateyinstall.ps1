@@ -1,11 +1,11 @@
 $mayaPackageId    = "{42762096-E3FE-3521-9687-693E0B913A4F}"
 
 $url1             = 'https://efulfillment.autodesk.com/NetSWDLD/2024/MAYA/42762096-E3FE-3521-9687-693E0B913A4F/SFX//Autodesk_Maya_2024_1_Update_Windows_64bit_dlm_001_002.sfx.exe'
-$checksum1        = '01C66556BB7B0EE60275284926FEFF0ED4D039761F29C848DF27A68B8AE9AAFD'
+$checksum1        = 'EDDBE50763EE58EBB03C43C8587800A8072E095B30CA97592A37ABEA938CADE4'
 $url2             = 'https://efulfillment.autodesk.com/NetSWDLD/2024/MAYA/42762096-E3FE-3521-9687-693E0B913A4F/SFX//Autodesk_Maya_2024_1_Update_Windows_64bit_dlm_002_002.sfx.exe'
-$checksum2        = '17FD9C52999D7F46784972CE24912569AA57F556044B5A265E644AE39F77BEF1'
+$checksum2        = 'A2E3C467D11B721D2F35E79AFFCEA6D584A7321F6425507893969C313FC95729'
 
-$unzip            = Join-Path $env:TEMP 'Autodesk_Maya_2022_1_ML_Windows_64bit_dlm'
+$unzip            = Join-Path $env:TEMP 'Autodesk_Maya_2024_1_Update_Windows_64bit_dlm'
 
 $downloadPath1  = Join-Path $env:TEMP 'Autodesk_Maya_2024_1_Update_Windows_64bit_dlm_001_002.sfx.exe'
 $downloadPath2  = Join-Path $env:TEMP 'Autodesk_Maya_2024_1_Update_Windows_64bit_dlm_002_002.sfx.exe'
