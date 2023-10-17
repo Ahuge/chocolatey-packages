@@ -59,17 +59,6 @@ $packageArgsAGS  = @{
 }
 Install-ChocolateyInstallPackage @packageArgsAGS
 
-$adsso           = Join-Path $unzip 'x64\AdSSO\AdSSO.msi'
-$packageArgsAdSSO  = @{
-  packageName    = 'Autodesk Single Sign On Component'
-  fileType       = 'msi'
-  file           = $adsso
-  softwareName   = 'Autodesk Single Sign On Component*'
-  silentArgs     = '/qn /norestart'
-  validExitCodes = @(0, 3010, 1641)
-}
-Install-ChocolateyInstallPackage @packageArgsAdSSO
-
 $adsklic         = Join-Path $unzip 'x86\Licensing\AdskLicensing-installer.exe'
 $packageArgsLic  = @{
   packageName    = 'Autodesk Licensing Installer'
@@ -105,16 +94,27 @@ $packageArgsVcRedist2022x86  = @{
 }
 Install-ChocolateyInstallPackage @packageArgsVcRedist2022x86
 
-$adskapp         = Join-Path $unzip 'x86\ADSKAPP\AdApplicationManager-installer.exe'
-$packageArgsADSKAPP = @{
-  packageName    = 'Autodesk Desktop app'
+$webView           = Join-Path $unzip '3rdParty\x64\WebView2\MicrosoftEdgeWebView2RuntimeInstallerX64.exe'
+$packageArgsWebView  = @{
+  packageName    = 'Microsoft Edge Update'
   fileType       = 'exe'
-  file           = $adskapp
-  softwareName   = 'Autodesk Desktop app*'
+  file           = $webView
+  softwareName   = 'Microsoft Edge Update 1.4.165.21*'
+  silentArgs     = '/silent /install'
+  validExitCodes = @(0, 3010, 1641)
+}
+Install-ChocolateyInstallPackage @packageArgsWebView
+
+$adskIdentity         = Join-Path $unzip 'x64\AdskIdentityManager\AdskIdentityManager-Installer.exe'
+$packageArgsAdskIdentity = @{
+  packageName    = 'Autodesk Identity Manager'
+  fileType       = 'exe'
+  file           = $adskIdentity
+  softwareName   = 'Autodesk Identity Manager 1.7.3.0*'
   silentArgs     = '--mode unattended'
   validExitCodes = @(0, 3010, 1641)
 }
-Install-ChocolateyInstallPackage @packageArgsADSKAPP
+Install-ChocolateyInstallPackage @packageArgsAdskIdentity
 
 $maya            = Join-Path $unzip 'x64\Maya\Maya.msi'
 $packageArgsMaya = @{
