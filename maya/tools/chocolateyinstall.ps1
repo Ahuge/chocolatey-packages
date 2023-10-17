@@ -1,14 +1,14 @@
-$mayaPackageId    = "{9CF605B0-2F2D-378F-9603-68A2199ECE65}"
+$mayaPackageId    = "{42762096-E3FE-3521-9687-693E0B913A4F}"
 
-$url1             = 'https://efulfillment.autodesk.com/NetSWDLD/2022/MAYA/9CF605B0-2F2D-378F-9603-68A2199ECE65/SFX/Autodesk_Maya_2022_1_ML_Windows_64bit_dlm_001_002.sfx.exe'
+$url1             = 'https://efulfillment.autodesk.com/NetSWDLD/2024/MAYA/42762096-E3FE-3521-9687-693E0B913A4F/SFX//Autodesk_Maya_2024_1_Update_Windows_64bit_dlm_001_002.sfx.exe'
 $checksum1        = '01C66556BB7B0EE60275284926FEFF0ED4D039761F29C848DF27A68B8AE9AAFD'
-$url2             = 'https://efulfillment.autodesk.com/NetSWDLD/2022/MAYA/9CF605B0-2F2D-378F-9603-68A2199ECE65/SFX/Autodesk_Maya_2022_1_ML_Windows_64bit_dlm_002_002.sfx.exe'
+$url2             = 'https://efulfillment.autodesk.com/NetSWDLD/2024/MAYA/42762096-E3FE-3521-9687-693E0B913A4F/SFX//Autodesk_Maya_2024_1_Update_Windows_64bit_dlm_002_002.sfx.exe'
 $checksum2        = '17FD9C52999D7F46784972CE24912569AA57F556044B5A265E644AE39F77BEF1'
 
 $unzip            = Join-Path $env:TEMP 'Autodesk_Maya_2022_1_ML_Windows_64bit_dlm'
 
-$downloadPath1  = Join-Path $env:TEMP 'Autodesk_Maya_2022_1_ML_Windows_64bit_dlm_001_002.sfx.exe'
-$downloadPath2  = Join-Path $env:TEMP 'Autodesk_Maya_2022_1_ML_Windows_64bit_dlm_002_002.sfx.exe'
+$downloadPath1  = Join-Path $env:TEMP 'Autodesk_Maya_2024_1_Update_Windows_64bit_dlm_001_002.sfx.exe'
+$downloadPath2  = Join-Path $env:TEMP 'Autodesk_Maya_2024_1_Update_Windows_64bit_dlm_002_002.sfx.exe'
 $packageDownloadArgsURL1 = @{
   packageName    = $env:ChocolateyPackageName
   url            = $url1
@@ -33,7 +33,7 @@ $packageArgs = @{
   file          = $downloadPath1
   silentArgs    = "-suppresslaunch -d $env:TEMP"
   validExitCodes= @(0, 3010, 1641)
-  softwareName  = 'autodeskmaya2022*'
+  softwareName  = 'autodeskmaya2024*'
 }
 
 Install-ChocolateyInstallPackage @packageArgs
@@ -81,40 +81,29 @@ $packageArgsLic  = @{
 }
 Install-ChocolateyInstallPackage @packageArgsLic
 
-$vcRedist2019x64     = Join-Path $unzip '3rdParty\x64\VCRedist\2019\vcredist_x64.exe'
-$vcRedistVersion     = "2019"
-$packageArgsVcRedist2019x64  = @{
+$vcRedist2022x64     = Join-Path $unzip '3rdParty\x64\VCRedist\2022\vcredist_x64.exe'
+$vcRedistVersion     = "2022"
+$packageArgsVcRedist2022x64  = @{
   packageName    = "vcredist ${vcRedistVersion} x64"
   fileType       = 'exe'
-  file           = $vcRedist2019x64
-  softwareName   = "Microsoft Visual C++ 2015-2019 Redistributable (x64)*"
+  file           = $vcRedist2022x64
+  softwareName   = "Microsoft Visual C++ 2015-2022 Redistributable (x64)*"
   silentArgs     = '/q /norestart'
   validExitCodes = @(0, 1638, 3010, 5100)
 }
-Install-ChocolateyInstallPackage @packageArgsVcRedist2019x64
+Install-ChocolateyInstallPackage @packageArgsVcRedist2022x64
 
-$vcRedist2019x86     = Join-Path $unzip '3rdParty\x86\VCRedist\2019\vcredist_x86.exe'
-$vcRedistVersion     = "2019"
-$packageArgsVcRedist2019x86  = @{
+$vcRedist2022x86     = Join-Path $unzip '3rdParty\x86\VCRedist\2022\vcredist_x86.exe'
+$vcRedistVersion     = "2022"
+$packageArgsVcRedist2022x86  = @{
   packageName    = "vcredist ${vcRedistVersion} x86"
   fileType       = 'exe'
-  file           = $vcRedist2019x86
-  softwareName   = "Microsoft Visual C++ 2015-2019 Redistributable (x86)*"
+  file           = $vcRedist2022x86
+  softwareName   = "Microsoft Visual C++ 2015-2022 Redistributable (x86)*"
   silentArgs     = '/q /norestart'
   validExitCodes = @(0, 1638, 3010, 5100)
 }
-Install-ChocolateyInstallPackage @packageArgsVcRedist2019x86
-
-$maya            = Join-Path $unzip 'x64\Maya\Maya.msi'
-$packageArgsMaya = @{
-  packageName    = 'Autodesk Maya'
-  fileType       = 'msi'
-  file           = $maya
-  softwareName   = 'Autodesk Maya 2022*'
-  silentArgs     = 'ADSK_ODIS_SETUP="1" INSTALLDIR="C:\Program Files\Autodesk" /qn /norestart'
-  validExitCodes = @(0, 3010, 1641)
-}
-Install-ChocolateyInstallPackage @packageArgsMaya
+Install-ChocolateyInstallPackage @packageArgsVcRedist2022x86
 
 $adskapp         = Join-Path $unzip 'x86\ADSKAPP\AdApplicationManager-installer.exe'
 $packageArgsADSKAPP = @{
@@ -127,6 +116,39 @@ $packageArgsADSKAPP = @{
 }
 Install-ChocolateyInstallPackage @packageArgsADSKAPP
 
+$maya            = Join-Path $unzip 'x64\Maya\Maya.msi'
+$packageArgsMaya = @{
+  packageName    = 'Autodesk Maya'
+  fileType       = 'msi'
+  file           = $maya
+  softwareName   = 'Autodesk Maya 2024*'
+  silentArgs     = 'ADSK_ODIS_SETUP="1" INSTALLDIR="C:\Program Files\Autodesk" /qn /norestart'
+  validExitCodes = @(0, 3010, 1641)
+}
+Install-ChocolateyInstallPackage @packageArgsMaya
+
+$mayaUsd     = Join-Path $unzip 'x64\MayaUSD\MayaUSD.msi'
+$packageArgsMayaUSD  = @{
+  packageName    = 'MayaUSD'
+  fileType       = 'msi'
+  file           = $mayaUsd
+  softwareName   = 'MayaUSD 0.23.1*'
+  silentArgs     = '/qn /norestart'
+  validExitCodes = @(0, 3010, 1641)
+}
+Install-ChocolateyInstallPackage @packageArgsMayaUSD
+
+  $lookDevX     = Join-Path $unzip 'x64/LookdevX/LookdevX.msi'
+$packageArgsMToA  = @{
+  packageName    = "LookdevX"
+  fileType       = 'msi'
+  file           = $mToA
+  softwareName   = "LookdevX 1.1.0*"
+  silentArgs     = '/qn /norestart'
+  validExitCodes = @(0, 1638, 3010)
+}
+Install-ChocolateyInstallPackage @packageArgsMToA
+
 $mToA     = Join-Path $unzip '3rdParty\MtoA\MtoA.exe'
 $packageArgsMToA  = @{
   packageName    = "MtoA"
@@ -138,36 +160,23 @@ $packageArgsMToA  = @{
 }
 Install-ChocolateyInstallPackage @packageArgsMToA
 
-
 $bifrost     = Join-Path $unzip 'x64\Bifrost\bifrost.msi'
 $packageArgsBifrost  = @{
   packageName    = 'Bifröst'
   fileType       = 'msi'
   file           = $bifrost
-  softwareName   = 'Bifröst 2.2.1.2*'
+  softwareName   = 'Bifröst 2.7.0.1*'
   silentArgs     = '/qn /norestart'
   validExitCodes = @(0, 3010, 1641)
 }
 Install-ChocolateyInstallPackage @packageArgsBifrost
 
-
-$mayaUsd     = Join-Path $unzip 'x64\MayaUSD\MayaUSD.msi'
-$packageArgsMayaUSD  = @{
-  packageName    = 'MayaUSD'
-  fileType       = 'msi'
-  file           = $mayaUsd
-  softwareName   = 'MayaUSD 0.10.0*'
-  silentArgs     = '/qn /norestart'
-  validExitCodes = @(0, 3010, 1641)
-}
-Install-ChocolateyInstallPackage @packageArgsMayaUSD
-
-$substance     = Join-Path $unzip 'x64\Substance\SubstanceInMaya-2.1.9-2022-Windows.exe'
+$substance     = Join-Path $unzip 'x64\Substance\AdobeSubstance3DforMaya-2.3.2-2024-msvc14-x86_64.exe'
 $packageArgsSubstance  = @{
-  packageName    = "Substance in Maya 2022"
+  packageName    = "Substance"
   fileType       = 'exe'
   file           = $substance
-  softwareName   = "Substance in Maya 2022*"
+  softwareName   = "Substance 2.3.2*"
   silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
   validExitCodes = @(0, 1638, 3010)
 }
